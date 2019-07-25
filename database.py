@@ -93,17 +93,21 @@ class Database(object):
             self.update_rates()
 
     def update_rates(self):
-        #update time
-        response = requests.get(self.url_api)
-        if(response.status_code == requests.codes.ok):
-            date = json.loads(response.text)['date']
-            self.insert_date(date)
-        #update rates
-        for code in self.currencies.keys():
-            response = requests.get(self.url_api + '?base=' + code)
+        try:
+            #update time
+            response = requests.get(self.url_api)
             if(response.status_code == requests.codes.ok):
-                dict = json.loads(response.text)
-                self.insert_rates(dict)
+                date = json.loads(response.text)['date']
+                self.insert_date(date)
+            #update rates
+            for code in self.currencies.keys():
+                response = requests.get(self.url_api + '?base=' + code)
+                if(response.status_code == requests.codes.ok):
+                    dict = json.loads(response.text)
+                    self.insert_rates(dict)
+        except:
+            pass
+
 
     def insert_date(self, value):
         cur = self.connection.cursor()
@@ -161,7 +165,7 @@ class Database(object):
             cur.execute(select_single_query, (base, base, wanted, wanted))
         result = cur.fetchall()
         if(len(result) == 0):
-            raise DatabaseException("Unsupported output currency")
+            raise DatabaseException("Unsupported output currency or could not update exchange rates")
         return base_name[0], result
 
 
