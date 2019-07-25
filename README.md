@@ -54,29 +54,39 @@ http://127.0.0.1:5000/currency_converter?amount=100&input_currency=EUR&output_cu
 
 This table shows all supported currency symbols and corresponding currency.
 
-| Currency symbol | Currency code | Currency name |
-|-----|-----|------------------------|
-| $   | USD | United States dollar   |
-| Fr. | CHF | Swiss franc            |
-| Ft  | HUF | Hungarian forint       |
-| HK$ | HKD | Hong Kong dollar       |
-| Kr  | DKK | Danish krone           |
-| Kč  | CZK | Czech koruna           |
-| L   | RON | Romanian leu           |
-| NZ$ | NZD | New Zealand dollar     |
-| R$  | BRL | Brazilian real         |
-| R   | RUB | Russian ruble          |
-| RM  | MYR | Malaysian ringgit      |
-| Rp  | IDR | Indonesian rupiah      |
-| S$  | SGD | Singapore dollar       |
-| W   | KRW | South Korean won       |
-| kn  | HRK | Croatian kuna          |
-| kr  | NOK | Norwegian krone        |
-| zł  | PLN | Polish zloty           |
-| £   | GBP | British pound          |
-| ¥   | JPY | Japanese yen           |
-| ฿   | THB | Thai baht              |
-| ₪   | ILS | Israeli new sheqel     |
-| €   | EUR | European Euro          |
-| ₱   | PHP | Philippine peso        |
-| ₹   | INR | Indian rupee           |
+| Currency code | Currency symbol | Currency name |
+|-----|-----|---------------------------|
+|  €  | EUR |   Euro                    |
+| US$ | USD |	US dollar               |
+| JP¥ | JPY |	Japanese yen            |
+| лв  | BGN |	Bulgarian lev           |
+| Kč  | CZK |	Czech koruna            |
+| Dkr | DKK |	Danish krone            |
+|  £  | GBP |	Pound sterling          |
+| Ft  | HUF |	Hungarian forint        |
+| zł  | PLN |	Polish zloty            |
+| lei | RON |	Romanian leu            |
+| Skr | SEK |	Swedish krona           |
+| Fr  | CHF |	Swiss franc             |
+| Ikr | ISK |	Icelandic krona         |
+| Nkr | NOK |	Norwegian krone         |
+| kn  | HRK |	Croatian kuna           |
+|  R  | RUB |	Russian rouble          |
+| TRY | TRY |	Turkish lira            |
+| AU$ | AUD |	Australian dollar       |
+| R$  | BRL |	Brazilian real          |
+| CA$ | CAD |	Canadian dollar         |
+| CN¥ | CNY |	Chinese yuan renminbi   |
+| HK$ | HKD |	Hong Kong dollar        |
+| Rp  | IDR |	Indonesian rupiah       |
+|  ₪  | ILS |	Israeli shekel          |
+|  ₹  | INR |	Indian rupee            |
+|  W  | KRW |	South Korean won        |
+|Mex$ | MXN |	Mexican peso            |
+| RM  | MYR |	Malaysian ringgit       |
+| NZ$ | NZD |	New Zealand dollar      |
+|  ₱  | PHP |	Philippine peso         |
+| S$  | SGD |	Singapore dollar        |
+|  ฿  | THB |	Thai baht               |
+|  R  | ZAR |	South African rand      |
+
