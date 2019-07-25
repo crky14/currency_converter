@@ -42,9 +42,14 @@ new exchange rates if it is possible.
 ```
 ./currency-converter_api.py
 ```
-   Running on [http://127.0.0.1:5000/](http://127.0.0.1:5000/) by default
-
-
+ Running on [http://127.0.0.1:5000/](http://127.0.0.1:5000/) by default
+   
+ Example:
+```
+http://127.0.0.1:5000/currency_converter?amount=100&input_currency=EUR&output_currency=USD
+```
+   
+  
 ### Supported currency symbol conversions
 
 This table shows all supported currency symbols and corresponding currency.
