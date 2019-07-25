@@ -54,7 +54,7 @@ http://127.0.0.1:5000/currency_converter?amount=100&input_currency=EUR&output_cu
 
 This table shows all supported currency symbols and corresponding currency.
 
-| Currency code | Currency symbol | Currency name |
+| Currency symbol | Currency code | Currency name |
 |-----|-----|---------------------------|
 |  €  | EUR |   Euro                    |
 | US$ | USD |	US dollar               |
