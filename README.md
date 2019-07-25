@@ -27,9 +27,9 @@ new exchange rates if it is possible.
 ```
 ./currency-converter.py
     [-h]
-    --amount AMOUNT
-    --input_currency INPUT_CURRENCY
-    [--output_currency OUTPUT_CURRENCY]
+    -a OR --amount AMOUNT
+    -i OR --input_currency INPUT_CURRENCY
+    [-o OR --output_currency OUTPUT_CURRENCY]
 
 -h, --help                            show this help message and exit
 --amount AMOUNT                       amount to convert
