@@ -42,25 +42,26 @@ class Database(object):
         'THB': '฿',
         'ZAR': 'R'
     }
-    database_dir = './database'
-    database_path = './database/currency_database.db'
-    url_api = 'https://api.exchangeratesapi.io/latest'
+    database_dir = "./database"
+    url_api = "https://api.exchangeratesapi.io/latest"
 
     def __init__(self):
         super(Database, self).__init__()
         #create connection to database
         if not os.path.exists(self.database_dir):
-            os.makedirs(self.database_path)
+            os.makedirs(self.database_dir)
         try:
-            self.connection = sqlite3.connect(self.database_dir+'/currency_database.db')
+            self.connection = sqlite3.connect(self.database_dir + '/currency_database.db')
         except:
+            self.connection = None
             raise DatabaseException("Could not connect do database")
         #check database
         self.create_tables()
         self.init_database()
 
     def __del__(self):
-        self.connection.close()
+        if(self.connection != None):
+            self.connection.close()
 
     def create_tables(self):
         cur = self.connection.cursor()
@@ -93,7 +94,6 @@ class Database(object):
             self.update_rates()
 
     def update_rates(self):
-        try:
             #update time
             response = requests.get(self.url_api)
             if(response.status_code == requests.codes.ok):
@@ -105,9 +105,6 @@ class Database(object):
                 if(response.status_code == requests.codes.ok):
                     dict = json.loads(response.text)
                     self.insert_rates(dict)
-        except:
-            pass
-
 
     def insert_date(self, value):
         cur = self.connection.cursor()
@@ -165,7 +162,7 @@ class Database(object):
             cur.execute(select_single_query, (base, base, wanted, wanted))
         result = cur.fetchall()
         if(len(result) == 0):
-            raise DatabaseException("Unsupported output currency or could not update exchange rates")
+            raise DatabaseException("Unsupported output currency")
         return base_name[0], result
 
 

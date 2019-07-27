@@ -1,6 +1,7 @@
 from database import Database, DatabaseException
 import argparse
 import json
+import sys
 
 class Converter(object):
     """docstring for CurrencyConverter."""
@@ -10,7 +11,7 @@ class Converter(object):
         try:
             self.db = Database()
         except DatabaseException as e:
-            print(e)
+            sys.exit(e)
 
     def parse_arguments(self):
         parser = argparse.ArgumentParser()
