@@ -38,4 +38,7 @@ class Converter(object):
         }
         rates = [(i[0], format(i[1] * amount, '.2f')) for i in rates]
         result["output"].update(rates)
-        return json.dumps(result, indent=4, sort_keys=True)
+        return result
+
+    def to_json(self, dict):
+        return json.dumps(dict, indent=4, sort_keys=True)
