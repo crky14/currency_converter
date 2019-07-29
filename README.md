@@ -49,9 +49,9 @@ http://127.0.0.1:5000/currency_converter?amount=50&input_currency=CA$
 ```
    
   
-### Supported currency symbol conversions
+### Supported currencies and their symbols
 
-This table shows all supported currency symbols and corresponding currency.
+This table shows all supported currencies and their symbols/signs.
 
 | Currency symbol | Currency code | Currency name |
 |-----|-----|---------------------------|
