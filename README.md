@@ -7,19 +7,15 @@ All currency exchange rates are collected from European Central Bank using https
 
 ## Requirements
 
-* python 3
-* sqlite3
+* python3
 
 After cloning github repository all needed python modules can be found in requirments.txt.
 Install them with command `pip3 install -r requirements.txt`
 
 ## Implementation
 
-Instead of simple requesting needed exchange rate from API my implementation creates simple
-relation database. Database is created on first execution of application and filled with newest 
-exchange rates from European Central Bank.
-Every exection of CLI application or request on API application checks conditions and update
-new exchange rates if it is possible.
+Application get exchange rates from European Central Bank by consuming API request created from arguments.
+Rates are used to create demanded exchange to needed currency.
 
 ## Usage
 
@@ -44,9 +40,11 @@ new exchange rates if it is possible.
 ```
  Running on [http://127.0.0.1:5000/](http://127.0.0.1:5000/) by default
    
- Example:
+ Examples:
 ```
 http://127.0.0.1:5000/currency_converter?amount=100&input_currency=EUR&output_currency=USD
+
+http://127.0.0.1:5000/currency_converter?amount=50&input_currency=CA$
 ```
    
   
@@ -82,7 +80,7 @@ This table shows all supported currency symbols and corresponding currency.
 |  ₪  | ILS |	Israeli shekel          |
 |  ₹  | INR |	Indian rupee            |
 |  W  | KRW |	South Korean won        |
-|Mex$ | MXN |	Mexican peso            |
+| Mx$ | MXN |	Mexican peso            |
 | RM  | MYR |	Malaysian ringgit       |
 | NZ$ | NZD |	New Zealand dollar      |
 |  ₱  | PHP |	Philippine peso         |
