@@ -6,23 +6,33 @@ app = FlaskAPI(__name__)
 
 @app.route("/currency_converter", methods=['GET'])
 def convert_currency():
-    converter = Converter()
     args = request.args
     amount = request.args.get("amount")
     input_currency = request.args.get("input_currency")
     output_currency = request.args.get("output_currency")
+    error_response = {
+        'error': "",
+        'Required arguemnts': {
+            'amount': "Amount to exchange (float)",
+            'input_currency': "Base currency (string)"
+        },
+        'Optional arguments': {
+            'output_currency': "Wanted currencies (string)"
+        }
+    }
+    print(error_response)
     if(amount == None or input_currency == None):
-        return "Request missing required arguments", status.HTTP_400_BAD_REQUEST
+        error_response['error'] = "Request missing required argument"
+        return jsonify(error_response), status.HTTP_400_BAD_REQUEST
     try:
         amount = float(amount)
     except:
-        return "Amount have to be a number", status.HTTP_400_BAD_REQUEST
-    #converion
-    convertion = converter.change_currency(amount, input_currency, output_currency)
-    if(convertion == None):
-        return "Unsupported currency", status.HTTP_400_BAD_REQUEST
-    else:
-        return jsonify(convertion), status.HTTP_200_OK
+        error_response['error'] = "Amount have to be a number"
+        return jsonify(error_response), status.HTTP_400_BAD_REQUEST
+    #convertion
+    converter = Converter()
+    result = converter.change_currency(amount, input_currency, output_currency)
+    return jsonify(result), status.HTTP_200_OK
 
 if __name__ == "__main__":
     app.run(debug=True)
