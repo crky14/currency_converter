@@ -10,7 +10,8 @@ All currency exchange rates are collected from European Central Bank using https
 * python3
 
 After cloning github repository all needed python modules can be found in requirments.txt.
-Install them with command `pip3 install -r requirements.txt`
+Install them with command 
+```pip3 install -r requirements.txt```
 
 ## Implementation
 
