@@ -12,11 +12,11 @@ def convert_currency():
     output_currency = request.args.get("output_currency")
     error_response = {
         'error': "",
-        'Required arguemnts': {
+        'required arguemnts': {
             'amount': "Amount to exchange (float)",
             'input_currency': "Base currency (string)"
         },
-        'Optional arguments': {
+        'optional arguments': {
             'output_currency': "Wanted currencies (string)"
         }
     }
