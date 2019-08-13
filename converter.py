@@ -39,7 +39,7 @@ class Converter(object):
         '₱':	'PHP',
         'S$':	'SGD',
         '฿':	'THB',
-        'R':	'ZAR'
+        'Ra':	'ZAR'
     }
 
     def __init__(self):
@@ -77,7 +77,7 @@ class Converter(object):
             rates = [(key, format(value * amount, '.2f')) for key, value in response_data['rates'].items()]
             result["output"].update(rates)
             return result
-        #convertion failed
+        #convertion
         return response_data
 
     def to_json(self, dict):
